@@ -29,13 +29,17 @@
         android:id="@+id/miwokTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/category_text"
+        android:textStyle="bold"
+        android:textAppearance="?android:textAppearanceMedium"
         tools:text="lutti"/>
 
     <TextView
         android:id="@+id/defaultTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/category_text"
+        android:textAppearance="?android:textAppearanceMedium"
         tools:text="one"/>
 
 </LinearLayout>
