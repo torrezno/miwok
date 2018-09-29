@@ -12,18 +12,18 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-        ArrayList<WordWithImage> words = new ArrayList<>();
+        ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new WordWithImage("wetetti", "red",R.drawable.color_red));
-        words.add(new WordWithImage("chokokki", "green",R.drawable.color_green));
-        words.add(new WordWithImage("takaakki", "brown",R.drawable.color_brown));
-        words.add(new WordWithImage("topoppi", "gray",R.drawable.color_gray));
-        words.add(new WordWithImage("kululli", "black",R.drawable.color_black));
-        words.add(new WordWithImage("kelelli", "white",R.drawable.color_white));
-        words.add(new WordWithImage("topiisa", "dusty yellow",R.drawable.color_dusty_yellow));
-        words.add(new WordWithImage("chiwiita", "mustard yellow",R.drawable.color_mustard_yellow));
+        words.add(new Word("wetetti", "red",R.drawable.color_red));
+        words.add(new Word("chokokki", "green",R.drawable.color_green));
+        words.add(new Word("takaakki", "brown",R.drawable.color_brown));
+        words.add(new Word("topoppi", "gray",R.drawable.color_gray));
+        words.add(new Word("kululli", "black",R.drawable.color_black));
+        words.add(new Word("kelelli", "white",R.drawable.color_white));
+        words.add(new Word("topiisa", "dusty yellow",R.drawable.color_dusty_yellow));
+        words.add(new Word("chiwiita", "mustard yellow",R.drawable.color_mustard_yellow));
 
-        WordWithImageAdapter itemsAdapter = new WordWithImageAdapter(this, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
     }
