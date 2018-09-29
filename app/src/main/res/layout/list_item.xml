@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="88dp">
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="88dp"
         android:layout_height="match_parent"
         android:scaleType="center"
         android:id="@+id/img"
         tools:src="@mipmap/ic_launcher"
+        android:background="@color/tan_background"
         />
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -18,7 +19,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="16dp"
+    android:background="@color/category_numbers"
     android:id="@+id/layout">
 
 
@@ -26,6 +29,7 @@
         android:id="@+id/miwokTranslation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         tools:text="lutti"/>
 
     <TextView

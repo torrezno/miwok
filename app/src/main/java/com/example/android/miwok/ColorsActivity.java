@@ -23,8 +23,9 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("topiisa", "dusty yellow",R.drawable.color_dusty_yellow));
         words.add(new Word("chiwiita", "mustard yellow",R.drawable.color_mustard_yellow));
 
-        WordAdapter itemsAdapter = new WordAdapter(this, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words,getResources().getColor(R.color.tan_background));
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
+        listView.setBackgroundColor(getResources().getColor(R.color.tan_background));
     }
 }

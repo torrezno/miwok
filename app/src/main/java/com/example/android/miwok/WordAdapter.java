@@ -16,10 +16,17 @@ import java.util.List;
 public class WordAdapter extends ArrayAdapter<Word>{
 
     private static final String LOG_TAG = Word.class.getSimpleName();
+    private int mColor = NO_COLOR_PROVIDED;
+    private static final int NO_COLOR_PROVIDED = -1;
 
 
+    public WordAdapter(Context context, ArrayList<Word> words, int color) {
+        super(context,0,words);
+        mColor=color;
+    }
     public WordAdapter(Context context, ArrayList<Word> words) {
         super(context,0,words);
+
     }
 
 
@@ -43,6 +50,8 @@ public class WordAdapter extends ArrayAdapter<Word>{
         }
         // Get the {@link AndroidFlavor} object located at this position in the list
         Word currentWord = getItem(position);
+
+
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwokTranslation);
