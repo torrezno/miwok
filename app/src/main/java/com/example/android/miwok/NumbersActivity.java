@@ -13,7 +13,7 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-        ArrayList<WordWithImage> words = new ArrayList<>();
+        ArrayList<Word> words = new ArrayList<>();
         //String[] words = new String[10];
         //Regex to replace
         //  1         2  3    4   5
@@ -22,18 +22,18 @@ public class NumbersActivity extends AppCompatActivity {
         //(words.add\()(.*\")(;)
         //$1$2);
 
-        words.add(new WordWithImage("lutti", "one", R.drawable.number_one));
-        words.add(new WordWithImage("otiiko", "two", R.drawable.number_two));
-        words.add(new WordWithImage("tolookosu", "three", R.drawable.number_three));
-        words.add(new WordWithImage("oyyisa", "four", R.drawable.number_four));
-        words.add(new WordWithImage("massokka", "five", R.drawable.number_five));
-        words.add(new WordWithImage("temmokka", "six", R.drawable.number_six));
-        words.add(new WordWithImage("kenekaku", "seven", R.drawable.number_seven));
-        words.add(new WordWithImage("kawinta", "eight", R.drawable.number_eight));
-        words.add(new WordWithImage("wo'e", "nine", R.drawable.number_nine));
-        words.add(new WordWithImage("na'aacha", "ten", R.drawable.number_ten));
+        words.add(new Word("lutti", "one", R.drawable.number_one));
+        words.add(new Word("otiiko", "two", R.drawable.number_two));
+        words.add(new Word("tolookosu", "three", R.drawable.number_three));
+        words.add(new Word("oyyisa", "four", R.drawable.number_four));
+        words.add(new Word("massokka", "five", R.drawable.number_five));
+        words.add(new Word("temmokka", "six", R.drawable.number_six));
+        words.add(new Word("kenekaku", "seven", R.drawable.number_seven));
+        words.add(new Word("kawinta", "eight", R.drawable.number_eight));
+        words.add(new Word("wo'e", "nine", R.drawable.number_nine));
+        words.add(new Word("na'aacha", "ten", R.drawable.number_ten));
 
-        WordWithImageAdapter itemsAdapter = new WordWithImageAdapter(this, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
 
