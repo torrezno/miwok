@@ -1,18 +1,21 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
 
 public class FamilyActivity extends AppCompatActivity {
-
+    private MediaPlayer mMediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
 
         words.add(new Word("әpә", "father",R.raw.family_father,R.drawable.family_father));
         words.add(new Word("әṭa", "mother",R.raw.family_mother,R.drawable.family_mother));
@@ -28,5 +31,12 @@ public class FamilyActivity extends AppCompatActivity {
         WordAdapter itemsAdapter = new WordAdapter(this, words, getResources().getColor(R.color.category_family));
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mMediaPlayer = MediaPlayer.create(FamilyActivity.this,words.get(i).getSound());
+                mMediaPlayer.start();
+            }
+        });
     }
 }

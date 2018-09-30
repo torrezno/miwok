@@ -1,18 +1,22 @@
 package com.example.android.miwok;
 
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
 
 
 public class ColorsActivity extends AppCompatActivity {
 
+    private MediaPlayer mMediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-        ArrayList<Word> words = new ArrayList<>();
+        final ArrayList<Word> words = new ArrayList<>();
 
         words.add(new Word("wetetti", "red",R.raw.color_red,R.drawable.color_red));
         words.add(new Word("chokokki", "green",R.raw.color_green,R.drawable.color_green));
@@ -27,5 +31,12 @@ public class ColorsActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
         listView.setBackgroundColor(getResources().getColor(R.color.tan_background));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                mMediaPlayer = MediaPlayer.create(ColorsActivity.this,words.get(i).getSound());
+                mMediaPlayer.start();
+            }
+        });
     }
 }
