@@ -80,6 +80,13 @@ public class WordAdapter extends ArrayAdapter<Word>{
             iconView.setVisibility(View.GONE);
         }
 
+        listItemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MediaPlayer md = MediaPlayer.create(getContext(),currentWord.getSound());
+                md.start();
+            }
+        });
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

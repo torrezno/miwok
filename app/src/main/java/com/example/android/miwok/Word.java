@@ -18,9 +18,13 @@ public class Word {
         this.mImageId = imageId;
         this.mSound = sound;
     }
-    public Word(String miwokTranslation, String defaultTranslation, int imageId) {
+/*    public Word(String miwokTranslation, String defaultTranslation, int imageId) {
         this(miwokTranslation,defaultTranslation);
         this.mImageId = imageId;
+    }*/
+    public Word(String miwokTranslation, String defaultTranslation, int sound) {
+        this(miwokTranslation,defaultTranslation);
+        this.mSound = sound;
     }
 
     public String getMiwokTranslation() {
