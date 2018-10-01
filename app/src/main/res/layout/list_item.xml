@@ -6,6 +6,20 @@
     android:background="@color/tan_background"
     android:orientation="horizontal">
 
+    <!-- This is the other way of giving the items of the list touch feedback
+    But i think it doesn't work as nice. The actual runing way is in the word_list
+    layout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="?android:attr/selectableItemBackground">
+    </View>
+-->
+
     <ImageView
         android:id="@+id/img"
         android:layout_width="88dp"
