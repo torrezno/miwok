@@ -66,7 +66,6 @@ public class PhrasesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container,false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         am = (AudioManager) getActivity().getSystemService(AudioManager.class);
         final ArrayList<Word> words = new ArrayList<>();
 

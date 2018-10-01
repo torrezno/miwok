@@ -62,12 +62,12 @@ public class NumbersFragment extends Fragment {
     }
 
 
+
     @TargetApi(Build.VERSION_CODES.M)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.word_list, container,false);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         am = (AudioManager) getActivity().getSystemService(AudioManager.class);
         final ArrayList<Word> words = new ArrayList<>();
 
