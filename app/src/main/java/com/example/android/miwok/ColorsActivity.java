@@ -51,6 +51,7 @@ public class ColorsActivity extends AppCompatActivity {
             };
 
     private AudioManager am;// = (AudioManager) getSystemService(AudioManager.class);
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
