@@ -23,7 +23,6 @@ public class ColorsActivity extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
-
     private AudioManager.OnAudioFocusChangeListener audioFocusChangeListener =
             new AudioManager.OnAudioFocusChangeListener() {
                 @Override
