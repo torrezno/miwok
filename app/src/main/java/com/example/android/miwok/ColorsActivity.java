@@ -13,7 +13,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 
-@TargetApi(Build.VERSION_CODES.M)
+
 public class ColorsActivity extends AppCompatActivity {
 
     private MediaPlayer mMediaPlayer;
@@ -23,10 +23,6 @@ public class ColorsActivity extends AppCompatActivity {
             releaseMediaPlayer();
         }
     };
-
-    public MediaPlayer.OnCompletionListener getmCompletionListener() {
-        return mCompletionListener;
-    }
 
     private AudioManager.OnAudioFocusChangeListener audioFocusChangeListener =
             new AudioManager.OnAudioFocusChangeListener() {
@@ -54,11 +50,12 @@ public class ColorsActivity extends AppCompatActivity {
                 }
             };
 
-    private AudioManager am = this.getSystemService(AudioManager.class);
+    private AudioManager am;// = (AudioManager) getSystemService(AudioManager.class);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+        am = (AudioManager) getSystemService(AudioManager.class);
         final ArrayList<Word> words = new ArrayList<>();
 
         words.add(new Word("wetetti", "red",R.raw.color_red,R.drawable.color_red));
