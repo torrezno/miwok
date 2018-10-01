@@ -53,6 +53,7 @@ public class PhrasesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         am = (AudioManager) getSystemService(AudioManager.class);
         final ArrayList<Word> words = new ArrayList<>();
 
